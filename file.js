@@ -1,17 +1,32 @@
-console.log("Hello world, ")
+function helloName(name) {
 
-console.log("from Visual studio code")
+    let result = "hello, " + name
+    return result
 
-let boolean1 = true
-let boolean2 = false
+}
 
-let sampleNumber = 32.2323
-console.log(sampleNumber)
+const variableFunction = function(name) {
 
-{
-    let userName = "test2"
+    let result = "hello, " + name
+    return result
+}
 
-    console.log(userName)
+const arrowFunction = (name) => {
+
+    let result = "hello, " + name
+    return result
 }
 
 
+let testName = "test"
+
+const result1 = variableFunction("Kuba")
+console.log(result1)
+
+const result2 = helloName(testName)
+console.log(result2)
+
+const resultFromArrowFunction = arrowFunction("arrow")
+console.log(resultFromArrowFunction)
+
+const result3 = helloName()
