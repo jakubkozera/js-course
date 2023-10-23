@@ -1,19 +1,40 @@
-// utwórz funkcje, która przyjmuje dwa parametry: imie i nazwisko, a w rezultacie zwróci jedną wartość 'imie nazwisko'
-// zdefiniuj ją za pomocą słowa kluczowego function, zdefiniuj jako zmienną z funkcją anonimową oraz funkcje strzałkową (3 warianty)
-// całość przetestuj
+// typ number
 
-function getDisplayName1(firstName, lastName) {
-    return firstName + " " + lastName
-}
+let a = 10
+let b = 5
 
-const getDisplayName2 = function(firstName, lastName) {
-    return firstName + " " + lastName
-}
+let sum = a + b
+let difference = a - b
+let product = a * b
+let quotient = a / b
 
-const getDisplayName3 = (firstName, lastName) => {
-    return firstName + " " + lastName
-}
+console.log(sum)
+console.log(difference)
+console.log(product)
+console.log(quotient)
 
-console.log(getDisplayName1("Test", "Display1"))
-console.log(getDisplayName2("Test", "Display2"))
-console.log(getDisplayName3("Test", "Display3"))
+let evenNumber = 4
+let oddNumber = 7
+
+console.log(evenNumber % 2)
+console.log(oddNumber % 2)
+
+let square = a ** 2
+console.log(square)
+
+let textualNumber = "123"
+console.log(parseInt(textualNumber) + 2)
+
+console.log(a === "10")
+console.log(a == "10")
+console.log(a !== b)
+console.log(a > b)
+console.log(a < b)
+console.log(a >= b)
+console.log(a <= b)
+
+// Math
+
+console.log(Math.floor(5.9))
+console.log(Math.round(5.6))
+console.log(Math.abs(-5.6))
