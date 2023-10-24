@@ -1,12 +1,28 @@
-// utwórz funkcje, która przyjmuje dwa parametry: a, b
-// rezultatem tej funkcji powinna być wartość typu boolean
-// określająca czy liczba a jest podzielna przez b
+// typ boolean
+
+let firstValue = true
+let secondValue = false
 
 
-function isDivisibleBy(a, b) {
-    return a % b === 0
-}
+let andResult = firstValue && secondValue
+console.log(andResult)
 
-console.log(isDivisibleBy(6,3))
-console.log(isDivisibleBy(6,4))
-console.log(isDivisibleBy(5,2))
+let orResult = firstValue || secondValue
+console.log(orResult)
+
+let notResult = !firstValue
+console.log(notResult)
+
+let longExpression = firstValue || secondValue && orResult || !notResult
+
+// nawiasy
+
+let a = false;
+let b = true;
+let c = false;
+
+let resultWithoutParentheses = b || a && c;
+console.log(resultWithoutParentheses); // true
+
+let resultWithParentheses = (b || a) && c;
+console.log(resultWithParentheses); // false
