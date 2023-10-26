@@ -1,28 +1,81 @@
-// typ boolean
+// typ string
 
-let firstValue = true
-let secondValue = false
+// definicje
+let singleQuotes = "Hello, I am a string!";
+let doubleQuotes = 'Another string.';
+let backticks = `I can also be a string.`;
+
+// łączenie wartości typu string (konkatenacja)
+let greeting = "Hello";
+let userName = "John";
+let welcomeMessage = greeting + ", " + userName + "!";
+// Result: "Hello, John!"
+
+let welcomeMessage2 = greeting.concat(", ", userName, "!")
+
+console.log(welcomeMessage)
+console.log(welcomeMessage2)
+
+// wydzielanie stringów
+
+const substr = welcomeMessage.substring(7, 4)
+console.log("substr:", substr)
+
+const slice = welcomeMessage.slice(7, 4)
+console.log("slice:", slice)
+
+const negativeSubstring = welcomeMessage.substring(-4)
+console.log("negativeSubstring:", negativeSubstring)
+
+const negativeSlice = welcomeMessage.slice(-4)
+console.log("negativeSlice:", negativeSlice)
+
+// znajdywanie indexu pod-stringu
+const userNameIndex = welcomeMessage.indexOf(userName)
+
+const sliceCalculated = welcomeMessage.slice(userNameIndex, userNameIndex + userName.length)
+console.log("sliceCalculated", sliceCalculated)
 
 
-let andResult = firstValue && secondValue
-console.log(andResult)
+// konwersja na małe wielkie litery
+const upper = welcomeMessage.toUpperCase()
+const lower = welcomeMessage.toLowerCase()
 
-let orResult = firstValue || secondValue
-console.log(orResult)
+console.log(upper)
+console.log(lower)
 
-let notResult = !firstValue
-console.log(notResult)
 
-let longExpression = firstValue || secondValue && orResult || !notResult
+// sprawdzanie wartości typu string
 
-// nawiasy
+console.log(welcomeMessage.startsWith("ello", 1))
+console.log(welcomeMessage.endsWith("John!"))
+console.log(welcomeMessage.includes("s!"))
 
-let a = false;
-let b = true;
-let c = false;
+// usuwanie białych znaków
+const whiteSpaceString = " this is A test "
 
-let resultWithoutParentheses = b || a && c;
-console.log(resultWithoutParentheses); // true
+console.log("'" + whiteSpaceString.trim() + "'")
+console.log("'" + whiteSpaceString.trimStart() + "'")
+console.log("'" + whiteSpaceString.trimEnd() + "'")
 
-let resultWithParentheses = (b || a) && c;
-console.log(resultWithParentheses); // false
+
+// pobieranie konkretnego znaku
+
+console.log(welcomeMessage.charAt(7))
+console.log(welcomeMessage[7])
+
+// zamiana znaków
+
+console.log("Hello World".replace("World", "JS"));
+
+// podział wartości string
+
+
+
+const splitResult = welcomeMessage.split("ll")
+console.log(splitResult)
+
+
+const input = getInput('Podaj wartosc')
+
+console.log(input);
