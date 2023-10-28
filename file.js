@@ -1,62 +1,30 @@
-// tablice
+// zad. 1:
+// utwórz funckję 'swap' w , która przyjmuje 3 parametry;
+// dowolną tablice, oraz 2 indexy (wartości liczbowe) określające, które wartości w rezultatcie będą ze sobą podmienione
+// przykładowo dla tablicy t = [23, 12, 5, 9, 45], rezultat z wywołania swap(t, 1, 3), będzie tablica t = [23, 9, 5, 12, 45]
 
-let numbers = [1, 3, 23, 14, 55]
+function swap(arr, x, y) {
 
-console.log(numbers)
+    let temp = arr[x]
+    arr[x] = arr[y]
+    arr[y] = temp
 
-// dostęp do elementu
-console.log(numbers[4])
+    return arr
+}
 
-// dodawanie i usuwanie elementów
-
-numbers.push(200)
-console.log("after push", numbers)
-
-const popedNumber = numbers.pop()
-console.log("popedNumber", popedNumber)
-console.log("after pop", numbers)
-
-numbers.unshift(100)
-console.log("after unshift", numbers)
-
-const shiftedNumber = numbers.shift()
-console.log("shiftedNumber", shiftedNumber)
-console.log("after shift", numbers)
-
-numbers.splice(1, 2)
-console.log("after splice", numbers)
+const t = [23, 12, 5, 9, 45]
+swap(t, 0, 4)
+console.log(t)
 
 
-numbers.splice(1, 0, 999, -444)
-console.log("after splice2", numbers)
+// zad. 2:
+// utwórz funkcje, która przyjmuje 2 parametry: dowolną tablicę liczb, oraz wartość x
+// rezultatem z funkcji powinnien być wynik, określający, ile jest elementów tablicy, większych od argumentu x
+// przykładowo dla tablicy: [23, 12, 5, 9, 45] oraz x = 20, wynikiem powinna być wartość = 2
 
+function countGreaterThan(arr, x) {
+    const matchingResult = arr.filter(y => y > x)
+    return matchingResult.length
+}
 
-const index = numbers.lastIndexOf(999)
-numbers.splice(index, 1)
-console.log("after splice3", numbers)
-
-// filtrowanie tablicy
-
-
-const bigNumbers = numbers.filter(x => x > 50)
-
-console.log("bigNumbers", bigNumbers)
-
-
-const biggestNumber = numbers.find(a => a > 100)
-console.log("biggestNumber", biggestNumber)
-
-
-// sprawdzanie tablicy
-
-const includesX = numbers.includes(23)
-console.log("includesX", includesX)
-
-console.log("All positive", numbers.every(x => x > 0))
-console.log("Any negative", numbers.some(x => x < 0))
-
-
-// odwracanie tablicy
-
-numbers.reverse()
-console.log("after reverse", numbers)
+console.log(countGreaterThan(t, 0))
