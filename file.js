@@ -1,26 +1,21 @@
-// metoda map
+// dla tablicy celsiusTemps, która zawiera informacje o wartościach temperatory w stopniach Celsiusza  
+// utwórz nową tablicę, przekształcając te informacje, na wartości temperatury w stopniach Fahrenheita
+// wzór: F = 9/5C + 32
+// rozwiązanie napisz w 2 wariantach:
+// 1. Z zastosowaniem metody map
+// 2. Z zastosowaniem metody forEach
 
-const numbers = [1, 2, 3, 4, 5]
+const celsiusTemps = [0, 15, 30, 45, 60];
 
-const doubledNumbers = numbers.map((x) =>  x * 2)
+const celsiusToFahrenheit = t => 9/5 * t + 32
 
-console.log(numbers)
-console.log(doubledNumbers)
+const fahrenheitTemps = celsiusTemps.map(celsiusToFahrenheit)
+console.log(fahrenheitTemps)
 
-const people = [
-    {
-        name: "Anna", age: 30
-    },
-    {
-        name: "Jan", age: 25
-    },
-    {
-        name: "Ewa", age: 35
-    },
-]
+const fahrenheitTemps2 = []
 
-const names = people
-    .filter(p => p.age >= 30)
-    .map(p => p.name)
+celsiusTemps.forEach(t => {
+    fahrenheitTemps2.push(celsiusToFahrenheit(t))
+})
+console.log(fahrenheitTemps2)
 
-console.log(names)
