@@ -1,18 +1,26 @@
-// wykorzystując funkcje foreach, stwórz funkcje, która zwróci sume wszystkcich elementów tablicy
-// oraz drugą funkcje, która zwróci średnią wartość elementów tablicy, zaokrągloną w dól (Math.floor)
+// metoda map
 
-const t = [23, 12, 5, 9, 45]
+const numbers = [1, 2, 3, 4, 5]
 
-function sum(arr) {
-    let sum = 0
-    arr.forEach((element) => sum += element)
+const doubledNumbers = numbers.map((x) =>  x * 2)
 
-    return sum
-}
+console.log(numbers)
+console.log(doubledNumbers)
 
-function average(arr) {
-    return Math.floor(sum(arr) / arr.length)
-}
+const people = [
+    {
+        name: "Anna", age: 30
+    },
+    {
+        name: "Jan", age: 25
+    },
+    {
+        name: "Ewa", age: 35
+    },
+]
 
-console.log(sum(t))
-console.log(average(t))
+const names = people
+    .filter(p => p.age >= 30)
+    .map(p => p.name)
+
+console.log(names)
