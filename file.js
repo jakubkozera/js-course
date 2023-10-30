@@ -1,9 +1,16 @@
-// tablice - foreach
-const t = [23, 12, 5, 9, 45]
+// łączenie tablic
 
-t.forEach((element, index, arr) => {
-    console.log("Index: " + index + ", wartość: " + element)
-    arr[index] =  element ** 2
-})
+const t = [23, 12, 5, 8, 235]
 
+const result = t.join(":")
+
+console.log(result)
+
+const t2 = [234, 123, 4, 8, 23]
+
+
+const newArray = t.concat(t2)
+
+console.log(newArray)
 console.log(t)
+console.log(t2)
