@@ -1,33 +1,18 @@
-// sortowanie tablic
-const t = [23, 12, 5, 9, 45, 453, 1000]
+// sortowanie tablic - zadanie
+// utwórz funkcje, która przymuje 3 parametry: 2 tablice wartości liczbowych, oraz wartość n - typu liczbowego
+// rezultatem tej funkcji powinna być tablica zawierająca n największych elementów, z tych dwóch tablic łącznie
+// przykładowo.
 
-t.sort((a, b) => b - a)
+// dla tablic: t1 = [23, 46, 5] oraz t = [11, 3] i wartością n = 3
+// wynikiem powinna być tablica: result = [46, 23, 11]
 
-// wynik ujemny - a jest mniejsze od b
-// wynik dodatni - a jest większe od b
-// wynik 0 - a jest równe b
-console.log(t)
+function getTopValues(t1, t2, n) {
+    const joinedTable = t1.concat(t2)
+    joinedTable.sort((a, b) => b - a)
+    const result = joinedTable.slice(0, n)
 
-const names = [ "Jakub", "Karolina", "Mariusz", "Adam"]
-names.sort((a, b) => b.length - a.length)
+    return result
+}
 
-console.log(names)
-
-const people = [
-    {
-        name: "Jakub Kozera",
-        age: 28
-    },
-    {
-        name: "Mariusz Pudzianowksi",
-        age: 46
-    },
-    {
-        name: "Adam Małysz",
-        age: 45
-    }
-]
-
-people.sort((a, b) => b.age - a.age)
-
-console.table(people)
+console.log(getTopValues([23, 46, 5], [11, 3], 3))
+console.log(getTopValues([23, 46, 5, 100], [1132, 3], 5))
