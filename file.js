@@ -1,16 +1,31 @@
-// łączenie tablic
+// obiekty
 
-const t = [23, 12, 5, 8, 235]
+const user = {
+    fullName: "John Doe",
+    age: 30,
+    money: 0,
+    work: function() {
+        console.log(this.fullName + " is working")
+        this.money += 50
+    }
+}
 
-const result = t.join(":")
+console.log(user)
+console.log(user.age)
+console.log(user.fullName)
+console.log(user.money)
 
-console.log(result)
+user.work()
+console.log(user.money)
+user.money = 5000
+console.log(user.money)
 
-const t2 = [234, 123, 4, 8, 23]
 
+// dynamiczne odnoszenie się do właściwości i ich wartości
+console.log(Object.values(user))
+const properties = Object.getOwnPropertyNames(user)
 
-const newArray = t.concat(t2)
+const firstProperty = properties[0]
+console.log(firstProperty, user[firstProperty])
 
-console.log(newArray)
-console.log(t)
-console.log(t2)
+console.log(properties.map(property => property + ":" + user[property] ))
