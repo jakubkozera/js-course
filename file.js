@@ -1,25 +1,30 @@
-// obiekty
+// zadanie:
+// utwórz bardzo prosty obiekt reprezentujący bankowat, który będzie w stanie
+// 1. Wyświetlić saldo bankomatu
+// 2. Złożyć depozyt (zwiększyć saldo)
+// 3. Wybrać gotówkę (zmniejszyć saldo)
 
-const user = {
-    fullName: "John Doe",
-    age: 30,
-    money: 0,
-    work: function() {
-        console.log(this.fullName + " is working")
-        this.money += 50
+
+const cashMachine = {
+    balance: 1000,
+    displayBalance: function() {
+        console.log("Current balance: " + this.balance)
     },
-    "# someProperty": "some value"
+    deposit: function(amount) {
+        this.balance += amount
+    },
+    withdraw: function(amount) {
+        this.balance -= amount
+        return amount
+    }
 }
 
-console.log(user)
-console.log(user.age)
-console.log(user.fullName)
-console.log(user.money)
+cashMachine.displayBalance()
+cashMachine.deposit(50)
+cashMachine.displayBalance()
 
-user.work()
-console.log(user.money)
-user.money = 5000
-console.log(user.money)
+cashMachine.withdraw(600)
+cashMachine.displayBalance()
 
-const propName = "# someProperty s"
-console.log(user[propName])
+
+
