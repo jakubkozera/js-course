@@ -1,30 +1,30 @@
-// zadanie:
-// utwórz bardzo prosty obiekt reprezentujący bankowat, który będzie w stanie
-// 1. Wyświetlić saldo bankomatu
-// 2. Złożyć depozyt (zwiększyć saldo)
-// 3. Wybrać gotówkę (zmniejszyć saldo)
+// daty
 
+const date = new Date()
 
-const cashMachine = {
-    balance: 1000,
-    displayBalance: function() {
-        console.log("Current balance: " + this.balance)
-    },
-    deposit: function(amount) {
-        this.balance += amount
-    },
-    withdraw: function(amount) {
-        this.balance -= amount
-        return amount
-    }
-}
+console.log(date)
 
-cashMachine.displayBalance()
-cashMachine.deposit(50)
-cashMachine.displayBalance()
+const pastDate = new Date(1990, 4, 14)
+console.log(pastDate)
 
-cashMachine.withdraw(600)
-cashMachine.displayBalance()
+console.log(pastDate > date)
 
+const stringDate = "1990-07-06"
 
+const date2 = new Date(stringDate)
 
+console.log(date2)
+
+console.log("Hours: ", date.getHours())
+console.log("FullYear: ", date.getFullYear())
+console.log("Month: ", date.getMonth())
+console.log("Date: ", date.getDate())
+console.log("Time: ", date.getTime())
+
+// zmiana daty
+
+date.setFullYear(date.getFullYear() + 10)
+date.setDate(5)
+console.log("Date modified:", date)
+
+console.log(date - date2)
