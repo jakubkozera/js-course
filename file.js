@@ -1,30 +1,43 @@
-// daty
+// daty: zadanie 1
+// utwórz funkcje, która przymuje jeden parametr z wartością typu string, do której będzie przekazana data urodzin
+// np pod postacią "1990/05/25"
+// w ramach rezultatu, funkcja zwróć wartość typu boolean, określająca czy dla tej daty osoba jest pełnoletnia
 
-const date = new Date()
+function isAdult(birthDate) {
+    const birthDateObj = new Date(birthDate)
 
-console.log(date)
+    const currentDate = new Date()
 
-const pastDate = new Date(1990, 4, 14)
-console.log(pastDate)
+    const eighteenYearAgo = new Date();
 
-console.log(pastDate > date)
+    eighteenYearAgo.setFullYear(currentDate.getFullYear() - 18)
+    return birthDateObj <= eighteenYearAgo
+}
 
-const stringDate = "1990-07-06"
+console.log(isAdult("1990/05/25"))
+console.log(isAdult("2020/05/25"))
+console.log(isAdult("2005/10/31"))
 
-const date2 = new Date(stringDate)
+// zadanie 2
+// utwórz funkcje, która przymuje jeden parametr z wartością typu string, do której będzie przekazana data urodzin
+// np pod postacią "1990/05/25"
+// w ramach rezultatu, funkcja zwróci liczbę dni do osiągnięcia pełnoletności 
 
-console.log(date2)
 
-console.log("Hours: ", date.getHours())
-console.log("FullYear: ", date.getFullYear())
-console.log("Month: ", date.getMonth())
-console.log("Date: ", date.getDate())
-console.log("Time: ", date.getTime())
+function daysUntilAdulthood(birthDate) {
+    const birthDateObj = new Date(birthDate)
 
-// zmiana daty
+    const currentDate = new Date()
 
-date.setFullYear(date.getFullYear() + 10)
-date.setDate(5)
-console.log("Date modified:", date)
+    const eighteenYearAgo = new Date();
 
-console.log(date - date2)
+    eighteenYearAgo.setFullYear(currentDate.getFullYear() - 18)
+
+    const msToAdulthood = birthDateObj - eighteenYearAgo
+
+    const daysToAdulthood = Math.floor(msToAdulthood / (1000 * 60 * 60 * 24))
+
+    return daysToAdulthood
+}
+
+console.log(daysUntilAdulthood("2020/05/25"))
