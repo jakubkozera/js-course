@@ -1,43 +1,32 @@
-// daty: zadanie 1
-// utwórz funkcje, która przymuje jeden parametr z wartością typu string, do której będzie przekazana data urodzin
-// np pod postacią "1990/05/25"
-// w ramach rezultatu, funkcja zwróć wartość typu boolean, określająca czy dla tej daty osoba jest pełnoletnia
+// object
 
-function isAdult(birthDate) {
-    const birthDateObj = new Date(birthDate)
-
-    const currentDate = new Date()
-
-    const eighteenYearAgo = new Date();
-
-    eighteenYearAgo.setFullYear(currentDate.getFullYear() - 18)
-    return birthDateObj <= eighteenYearAgo
+const user = {
+    fullName: "John Doe",
+    age: 30,
+    money: 0,
+    work: function() {
+        console.log(this.fullName + " is working")
+        this.money += 50
+    }
 }
 
-console.log(isAdult("1990/05/25"))
-console.log(isAdult("2020/05/25"))
-console.log(isAdult("2005/10/31"))
 
-// zadanie 2
-// utwórz funkcje, która przymuje jeden parametr z wartością typu string, do której będzie przekazana data urodzin
-// np pod postacią "1990/05/25"
-// w ramach rezultatu, funkcja zwróci liczbę dni do osiągnięcia pełnoletności 
+console.log(user.toString())
+console.log(user.hasOwnProperty("non"))
+console.log("Keys: ", Object.keys(user))
+console.log("Values: ", Object.values(user))
+console.log("Entires: ", Object.entries(user).map((entry) => entry[0] + ":" + entry[1])) // [["fullName":"John Doe"], ["age": "30"], ["money": "0"], ["work": ".."]]
 
+let user2 = {     
+    fullName: user.fullName,
+    age: user.age,
+    money: user.money,
+    work: user.work
+} 
 
-function daysUntilAdulthood(birthDate) {
-    const birthDateObj = new Date(birthDate)
+// Object.assign(user2, user)
 
-    const currentDate = new Date()
+user2.fullName = "Test user"
 
-    const eighteenYearAgo = new Date();
-
-    eighteenYearAgo.setFullYear(currentDate.getFullYear() - 18)
-
-    const msToAdulthood = birthDateObj - eighteenYearAgo
-
-    const daysToAdulthood = Math.floor(msToAdulthood / (1000 * 60 * 60 * 24))
-
-    return daysToAdulthood
-}
-
-console.log(daysUntilAdulthood("2020/05/25"))
+console.log(user)
+console.log(user2)
