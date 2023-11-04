@@ -1,35 +1,21 @@
-// typy wartościowe
+// interpolacja string
 
-let name1 = "Jakub"
-let name2 = name1
-name2 = "Klaudia"
+// ${}
 
-console.log("name1: ", name1);
-console.log("name2: ", name2);
+const firstName = "John"
+const lastName = "Doe"
+const age = 30
 
+// użycie operatora +
 
-function modifyValueType(x) {
-    x = x + 1
-}
-let x = 100
-modifyValueType(x)
+const message1 = "Hello, my name is " + firstName + " " + lastName + " I'm " + age
+console.log(message1)
+// metoda contact
 
-console.log(x)
+const message2 = "Hello, my name is ".concat(firstName, " ", lastName, " I'm ", age)
+console.log(message2)
 
-// typy referencyjne
-let user = {
-    fullName: "John Doe",
-    age: 30,
-}
+// interpolacja string
 
-let user2 = user
-user2.fullName = "Test user"
-
-function modifyReferenceType(obj) {
-    obj.age = obj.age + 1
-}
-
-modifyReferenceType(user)
-
-console.log(user)
-console.log(user2)
+const message3 = `Hello, my name is ${firstName} ${lastName} I'm ${age}`
+console.log(message3)
