@@ -1,21 +1,28 @@
-// interpolacja string
+// instrukcja warunkowa if-else
 
-// ${}
 
-const firstName = "John"
-const lastName = "Doe"
-const age = 30
+const grade = 90
 
-// użycie operatora +
+if (grade >= 90) {
+    console.log("Excellent")
+} else if (grade >= 80) {
+    console.log("Good")
+} else if (grade >= 70) {
+    console.log("Satisfactory")
+} else {
+    console.log("fail")
+}
 
-const message1 = "Hello, my name is " + firstName + " " + lastName + " I'm " + age
-console.log(message1)
-// metoda contact
+function checkNumber(number) {
+    // Postive, Zero, Negative
+    if(number > 0) {
+        return "Postive"
+    } else if(number === 0){
+        return "Zero"
+    } else {
+        return "Negative"
+    }
+}
 
-const message2 = "Hello, my name is ".concat(firstName, " ", lastName, " I'm ", age)
-console.log(message2)
-
-// interpolacja string
-
-const message3 = `Hello, my name is ${firstName} ${lastName} I'm ${age}`
-console.log(message3)
+console.log(checkNumber(5))
+console.log(checkNumber(-5))
