@@ -1,34 +1,25 @@
-// instrukcja switch - zadanie
-// Napisz funkcje, która dla oceny od 1 do 5
-// Zwróci jej tekstową reprezentacje
-// stopień bardzo dobry – 5,
-// stopień dobry – 4,
-// stopień dostateczny – 3,
-// stopień dopuszczający – 2,
-// stopień niedostateczny – 1
-// dla "nieprawidłowej" oceny, zwróci odpowiednia informacje
-
-function getGrade(grade) {
-    switch(grade) {
-        case 1:
-            return "niedostateczny"
-        case 2:
-            return "dopuszczający"
-        case 3:
-            return "dostateczny"
-        case 4:
-            return "dobry"
-        case 5:
-            return "bardzo dobry"
-        default:
-            return "nieprawidłowa ocena"
-    }
+// obiekt zamiast instrukcji switch - zadanie
+// Napisz funkcję, która dla liczby naturalnej od 1 do 12 zwraca jej odpowiednią nazwę miesiąca.
+// dla innej wartości, zwróci rezultat = "nieprawidłowy miesiąc"
+function getMonthName(monthNumber) {
+    const months = {
+        1: "Styczeń",
+        2: "Luty",
+        3: "Marzec",
+        4: "Kwiecień",
+        5: "Maj",
+        6: "Czerwiec",
+        7: "Lipiec",
+        8: "Sierpień",
+        9: "Wrzesień",
+        10: "Październik",
+        11: "Listopad",
+        12: "Grudzień",
+      };
+      return months[monthNumber] || "nieprawidłowy miesiąc"
 }
-
-console.log(getGrade(1))
-console.log(getGrade(2))
-console.log(getGrade(3))
-console.log(getGrade(4))
-console.log(getGrade(5))
-console.log(getGrade(235))
-console.log(getGrade(51))
+console.log(getMonthName(1))
+console.log(getMonthName(6))
+console.log(getMonthName(12))
+console.log(getMonthName(0))
+console.log(getMonthName(50))
