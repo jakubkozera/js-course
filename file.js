@@ -1,14 +1,25 @@
-// operator trójargumentowy
+// operator trójargumentowy - zadanie
 
-function checkEvenOdd(number) {
-    return number === 0 ? "Zero" 
-                : number % 2 === 0 ? "Even" : "Odd"
+// Zad. 1
+// Napisz funkcję `markExam`, która przyjmuje wynik testu (w punktach) 
+// i zwraca ocenę w formie tekstu. Jeśli wynik jest większy lub równy 70, 
+// funkcja powinna zwrócić "Pass", w przeciwnym razie "Fail".
+
+const markExam = (result) => 
+    result >= 70 ? "Pass" : "Fail"
+
+
+console.log(markExam(70))
+console.log(markExam(80))
+console.log(markExam(8))
+console.log(markExam(56))
+
+// Zad. 2
+// napisz funkcje, która dla dwóch argumentów liczbowych zwróci większą wartość jako rezultat:
+
+function max(value1, value2) {
+    return value1 > value2 ? value1 : value2
 }
-// 1 warunek - boolean
-// 2 wartość zwrócona z operatora, jeżeli warunek jest true
-// 3 wartość zwrócona z operatora, jeżeli warunek jest false
-// warunek ? "rezultat jeśli true" : "rezultat jeśli false"
 
-
-const numberStatus = checkEvenOdd(0);
-console.log(numberStatus); // Wyświetli: "Odd"
+console.log(max(34,6))
+console.log(max(4,36))
