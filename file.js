@@ -1,25 +1,26 @@
-// operator trójargumentowy - zadanie
+// instrukcja switch
 
-// Zad. 1
-// Napisz funkcję `markExam`, która przyjmuje wynik testu (w punktach) 
-// i zwraca ocenę w formie tekstu. Jeśli wynik jest większy lub równy 70, 
-// funkcja powinna zwrócić "Pass", w przeciwnym razie "Fail".
+const date = new Date()
 
-const markExam = (result) => 
-    result >= 70 ? "Pass" : "Fail"
+const day = date.getDay()
 
+console.log(day)
 
-console.log(markExam(70))
-console.log(markExam(80))
-console.log(markExam(8))
-console.log(markExam(56))
-
-// Zad. 2
-// napisz funkcje, która dla dwóch argumentów liczbowych zwróci większą wartość jako rezultat:
-
-function max(value1, value2) {
-    return value1 > value2 ? value1 : value2
+function getDayName(day) {
+    switch (day) {
+        case 1:
+            return "Poniedziałek"
+        case 2:
+            return "Wtorek"
+        case 3:
+            return "Środa"
+        case 4:
+            return "Czwartek"
+        case 5:
+            return "Piątek"
+        default:
+            return "Weekend"
+    }
 }
 
-console.log(max(34,6))
-console.log(max(4,36))
+console.log(getDayName(4))
