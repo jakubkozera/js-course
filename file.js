@@ -1,25 +1,23 @@
-// obiekt zamiast instrukcji switch - zadanie
-// Napisz funkcję, która dla liczby naturalnej od 1 do 12 zwraca jej odpowiednią nazwę miesiąca.
-// dla innej wartości, zwróci rezultat = "nieprawidłowy miesiąc"
-function getMonthName(monthNumber) {
-    const months = {
-        1: "Styczeń",
-        2: "Luty",
-        3: "Marzec",
-        4: "Kwiecień",
-        5: "Maj",
-        6: "Czerwiec",
-        7: "Lipiec",
-        8: "Sierpień",
-        9: "Wrzesień",
-        10: "Październik",
-        11: "Listopad",
-        12: "Grudzień",
-      };
-      return months[monthNumber] || "nieprawidłowy miesiąc"
+// pętla for
+
+for (let i = 0; i < 5; i++) {
+  console.log(i)
 }
-console.log(getMonthName(1))
-console.log(getMonthName(6))
-console.log(getMonthName(12))
-console.log(getMonthName(0))
-console.log(getMonthName(50))
+
+const number = [1, 2, 3, 6, 90]
+
+let sum = 0
+
+for(let i = 0; i < number.length; i++) {
+
+  let value = number[i]
+  if(value % 2 !== 0) {
+    continue;
+  }
+  sum += value
+  console.log("Adding " + value)
+  console.log("--")
+
+}
+
+console.log(sum)
