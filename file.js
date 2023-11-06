@@ -1,39 +1,20 @@
-// pętla for - zadanie
-// utwórz metodę imitującą metodę filter, która przyjmuje 2 argumenty
-// 1 - dowolną tablicę t
-// 2 - predykatę (funkcję zwracającą true/false)
-// rezultatem z tej metody powinna być nowa tablica zawierająca elementy tablicy t, które spełniają daną predykatę
-// przykładowo:
+// pętla for-of
 
-const numbers = [1, 2, 3, 6, 90]
-const filteredNumbers = numbers.filter(n => n % 2 === 0) // [2, 6, 90]
-console.log(filteredNumbers)
+const fruits = ["apple", "banana", "orange"]
 
-function filter(arr, predicate) {
-  
-  let result = []
-  for(let i = 0; i < arr.length; i++) {
-    const value = arr[i]
-    if(predicate(value)) {
-      result.push(value)
-    }
-  }
-  return result
+for (const fruit of fruits) {
+  if(fruit.length > 5) {
+    continue;
+  } 
+  console.log(fruit)
 }
 
-const people = [{
-  fullName: "Test1",
-  age: 30
-},
-{
-  fullName: "Test2",
-  age: 32
-},
-{
-  fullName: "Test3",
-  age: 33
-}]
+const numbers = [1,2,3,4, 90]
 
-console.log(filter(numbers, n => n % 2 === 0))
+let sum = 0;
 
-console.table(filter(people, p => p.age >= 32))
+for (const value of numbers) {
+  sum += value
+}
+
+console.log(sum)
