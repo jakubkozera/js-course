@@ -1,23 +1,39 @@
-// pętla for
+// pętla for - zadanie
+// utwórz metodę imitującą metodę filter, która przyjmuje 2 argumenty
+// 1 - dowolną tablicę t
+// 2 - predykatę (funkcję zwracającą true/false)
+// rezultatem z tej metody powinna być nowa tablica zawierająca elementy tablicy t, które spełniają daną predykatę
+// przykładowo:
 
-for (let i = 0; i < 5; i++) {
-  console.log(i)
-}
+const numbers = [1, 2, 3, 6, 90]
+const filteredNumbers = numbers.filter(n => n % 2 === 0) // [2, 6, 90]
+console.log(filteredNumbers)
 
-const number = [1, 2, 3, 6, 90]
-
-let sum = 0
-
-for(let i = 0; i < number.length; i++) {
-
-  let value = number[i]
-  if(value % 2 !== 0) {
-    continue;
+function filter(arr, predicate) {
+  
+  let result = []
+  for(let i = 0; i < arr.length; i++) {
+    const value = arr[i]
+    if(predicate(value)) {
+      result.push(value)
+    }
   }
-  sum += value
-  console.log("Adding " + value)
-  console.log("--")
-
+  return result
 }
 
-console.log(sum)
+const people = [{
+  fullName: "Test1",
+  age: 30
+},
+{
+  fullName: "Test2",
+  age: 32
+},
+{
+  fullName: "Test3",
+  age: 33
+}]
+
+console.log(filter(numbers, n => n % 2 === 0))
+
+console.table(filter(people, p => p.age >= 32))
