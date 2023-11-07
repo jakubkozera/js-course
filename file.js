@@ -1,27 +1,18 @@
-// pętla for-in
-
-const isoCountryCodes = {
-  "US" : "United States",
-  "CA": "Canada",
-  "PL": "Poland",
-  "FR": "France",
-  "DE": "Germany"
+// pętla for-in - zadanie
+// dla poniższego obiektu people,który przechowuje imię osoby oraz wyniki z testów pod postacią tablicy
+// napisz kod, który wypisze do konsoli, które osoby miały conajmniej 1 wynik, który przekraczał próg 70 pkt
+const people = {
+  "Adam": [23, 55, 53],
+  "John": [53, 59, 73],
+  "Pete": [3, 5, 2],
+  "Tomasz": [64, 75, 56],
 }
 
-// const keys = Object.keys(isoCountryCodes)
-// for (const key of keys) {
-//   const countryName = isoCountryCodes[key]
-//   console.log(`Country code: ${key} , country name: ${countryName}`)
-// }
 
-for(const isoCode in isoCountryCodes) {
-    const countryName = isoCountryCodes[isoCode]
-    if(countryName === "Canada") {
-      continue
-    }
-    
-    console.log(`Country code: ${isoCode}, country name: ${countryName}`)
-    if(countryName === "Poland") {
-      break
-    }
+for(const person in people) {
+  const results = people[person] // [23, 55, 53]
+  const hasHighScore = results.some(r => r > 70)
+  if(hasHighScore) {
+    console.log(`${person} has scored a high score`)
+  }
 }
