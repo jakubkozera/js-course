@@ -1,41 +1,10 @@
-//  dekonstrukcja tablic
+//  spread operator
 
-const coordinates = [150, 424, 5] // [x, y, z]
+const numbers1 = [1, 2, 3]
+const numbers2 = [4, 5, 6]
 
-// const x = coordinates[0]
-// const y = coordinates[1]
-// const z = coordinates[2]
+const result = [9, ...numbers1, ...numbers2]
+// result[0] = 5
 
-const [x, y, z] = coordinates 
-
-console.log(x)
-console.log(y)
-console.log(z)
-
-// pomijanie elementów
-
-const fruits = ["apple", "oragne", "banana"]
-
-const [firstFruit, , thirdFruit] = fruits
-
-console.log(firstFruit)
-console.log(thirdFruit)
-
-// reszta tablicy
-
-const colors = ["red", "green", "blue", "yellow"]
-
-const [primary, ...restColors] = colors
-
-
-console.log(primary)
-console.log(restColors)
-
-// domyślne wartości
-
-const values = [1, 3]
-
-const [firstValue, secondValue = 5] = values
-
-console.log(firstValue)
-console.log(secondValue)
+console.log(numbers1)
+console.log(result)
