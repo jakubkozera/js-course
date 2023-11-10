@@ -1,27 +1,41 @@
-// typ number - dodatkowe operatory
+//  dekonstrukcja tablic
 
-let a = 10
-let b = 5
+const coordinates = [150, 424, 5] // [x, y, z]
 
-let sum = a + b
-let difference = a - b
-let product = a * b
-let quotient = a / b
+// const x = coordinates[0]
+// const y = coordinates[1]
+// const z = coordinates[2]
 
-// console.log(sum)
-// console.log(difference)
-// console.log(product)
-// console.log(quotient)
-
-let x = 100
-console.log(x)
-x /= 10
+const [x, y, z] = coordinates 
 
 console.log(x)
+console.log(y)
+console.log(z)
 
-let i = 0
-console.log(i)
-console.log(i--)
-console.log(i)
+// pomijanie elementów
+
+const fruits = ["apple", "oragne", "banana"]
+
+const [firstFruit, , thirdFruit] = fruits
+
+console.log(firstFruit)
+console.log(thirdFruit)
+
+// reszta tablicy
+
+const colors = ["red", "green", "blue", "yellow"]
+
+const [primary, ...restColors] = colors
 
 
+console.log(primary)
+console.log(restColors)
+
+// domyślne wartości
+
+const values = [1, 3]
+
+const [firstValue, secondValue = 5] = values
+
+console.log(firstValue)
+console.log(secondValue)
