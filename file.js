@@ -1,10 +1,29 @@
-//  spread operator
+//  dekonstrukcja obiektu
 
-const numbers1 = [1, 2, 3]
-const numbers2 = [4, 5, 6]
+const user = { 
+    firstName: 'John', 
+    age: 30,
+    address: {
+        city: "Kraków",
+        street: "Kopernika"
+    }
+}
 
-const result = [9, ...numbers1, ...numbers2]
-// result[0] = 5
 
-console.log(numbers1)
-console.log(result)
+// const firstName = user.firstName
+// const age = user["age"]
+
+const { firstName, age, address: { city, street = "Długa" } } = user
+
+// console.log(firstName)
+// console.log(age)
+
+console.log(city)
+console.log(street)
+
+function displayUser({age, firstName}) {
+    console.log(firstName)
+    console.log(age)
+}
+
+displayUser(user)
