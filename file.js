@@ -1,22 +1,46 @@
-//  null-safety dla obiektów
+//  spread operator dla obiektów - zadanie
+// utwórz metodę przyjmującą 2 argumenty:
+// 1 - dowolna tablica obiektów (t)
+// 2 - dowolny obiekt (o)
+// w ramach rezultatu zwróc tablice elementów t, rozszerzonych o właściwości znajdujące się w obiekcie o
 
-const user = { 
-    firstName: 'John', 
+const people = [{ 
+    firstName: "John", 
+    lastName: "Doe"
+}, 
+{
+    firstName: "Paul",
+    lastName: "Walker"
+}]
+
+let additionalProperties = {
     age: 30,
-    // address: {
-    //     city: "Kraków",
-    //     street: "Kopernika"
-    // }
+    gender: "Male"
 }
 
-// const { firstName, age, address: { city, street } } = user
+
+const extendObjects = (array, addinalProps) => 
+    array.map(e => ({
+            ...e,
+            ...addinalProps
+    }))
 
 
-const city = user.address?.city || "Warszawa"
-console.log(city)
+console.table(extendObjects(people, additionalProperties))
 
-console.log(0 || 50)
-console.log(0 ?? 50)
-
-console.log("" || "default")
-console.log("" ?? "default")
+// rezultat
+// [
+//     {
+//       firstName: "John",
+//       lastName: "Doe",
+//       age: 30,
+//       gender: "Male"
+//     },
+//     {
+//       firstName: "Paul",
+//       lastName: "Walker",
+//       age: 30,
+//       gender: "Male"
+//     }
+//   ]
+  
