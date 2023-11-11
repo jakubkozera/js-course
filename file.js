@@ -1,29 +1,22 @@
-//  dekonstrukcja obiektu
+//  null-safety dla obiektów
 
 const user = { 
     firstName: 'John', 
     age: 30,
-    address: {
-        city: "Kraków",
-        street: "Kopernika"
-    }
+    // address: {
+    //     city: "Kraków",
+    //     street: "Kopernika"
+    // }
 }
 
+// const { firstName, age, address: { city, street } } = user
 
-// const firstName = user.firstName
-// const age = user["age"]
 
-const { firstName, age, address: { city, street = "Długa" } } = user
-
-// console.log(firstName)
-// console.log(age)
-
+const city = user.address?.city || "Warszawa"
 console.log(city)
-console.log(street)
 
-function displayUser({age, firstName}) {
-    console.log(firstName)
-    console.log(age)
-}
+console.log(0 || 50)
+console.log(0 ?? 50)
 
-displayUser(user)
+console.log("" || "default")
+console.log("" ?? "default")
