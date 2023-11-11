@@ -1,22 +1,19 @@
-//  null-safety dla obiektów
+//  spread operator dla obiektów
 
 const user = { 
     firstName: 'John', 
     age: 30,
-    // address: {
-    //     city: "Kraków",
-    //     street: "Kopernika"
-    // }
 }
 
-// const { firstName, age, address: { city, street } } = user
+let userName = {
+    lastName: "Doe"
+}
+let user2 = {
+    ...user, 
+    ...userName, 
+    age: 33}
 
 
-const city = user.address?.city || "Warszawa"
-console.log(city)
 
-console.log(0 || 50)
-console.log(0 ?? 50)
-
-console.log("" || "default")
-console.log("" ?? "default")
+console.log(user)
+console.log(user2)
