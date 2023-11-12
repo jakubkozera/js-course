@@ -1,46 +1,30 @@
-//  spread operator dla obiektów - zadanie
-// utwórz metodę przyjmującą 2 argumenty:
-// 1 - dowolna tablica obiektów (t)
-// 2 - dowolny obiekt (o)
-// w ramach rezultatu zwróc tablice elementów t, rozszerzonych o właściwości znajdujące się w obiekcie o
+// (de)serializacja obietków do postaci JSON
 
-const people = [{ 
-    firstName: "John", 
-    lastName: "Doe"
-}, 
-{
-    firstName: "Paul",
-    lastName: "Walker"
-}]
-
-let additionalProperties = {
-    age: 30,
-    gender: "Male"
+const userPreferences = {
+    theme: "dark",
+    language: "en",
+    fontSize: 16,
+    showNotifications: true,
+    setTheme: function (theme) {
+        this.theme = theme
+    },
+    someUndefinedProp: undefined,
+    someNullProp: null,
+    gridSettings: {
+        pageSize: 10,
+        pageNumber: 1
+    }
 }
 
+const json = JSON.stringify(userPreferences)
 
-const extendObjects = (array, addinalProps) => 
-    array.map(e => ({
-            ...e,
-            ...addinalProps
-    }))
+console.log(json)
+console.log(userPreferences)
 
 
-console.table(extendObjects(people, additionalProperties))
+const parsedObject = JSON.parse(json)
+console.log(parsedObject)
+console.log(parsedObject.theme)
+console.log(parsedObject.language)
+console.log(parsedObject.gridSettings.pageNumber)
 
-// rezultat
-// [
-//     {
-//       firstName: "John",
-//       lastName: "Doe",
-//       age: 30,
-//       gender: "Male"
-//     },
-//     {
-//       firstName: "Paul",
-//       lastName: "Walker",
-//       age: 30,
-//       gender: "Male"
-//     }
-//   ]
-  
