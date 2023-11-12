@@ -1,33 +1,32 @@
-// try-catch-finally
+// try-catch: zadanie
+// utworz funkcję walidującą imię użytkownika. 
+// Funkcja ta powinna przyjmować imię jako argument i sprawdzać, czy spełnia ono określone warunki.
 
-function processUser(user) {
-    try {
-        console.log(`Processing: ${user.fullName.toUpperCase()}`)
-    } catch (error) {
-        // console.error(error)
-        console.error("Error when processing user")
-        console.error("Please enter a valid fullName user property")
+// Wymagania:
+// Funkcja powinna być nazwana validateUsername i przyjmować jeden argument - imię użytkownika.
+// Jeśli przekazane imię nie jest ciągiem znaków, funkcja powinna rzucić wyjątek z odpowiednim komunikatem
+// [typeof name !== 'string']
+// Jeśli długość imienia jest mniejsza niż 4 znaki, funkcja powinna rzucić wyjątek z odpowiednim komunikatem
+// Funkcja powinna zwracać true, jeśli imię spełnia wszystkie warunki walidacji.
+// Stwórz blok try...catch, aby obsłużyć wyjątek i wyświetlić komunikat błędu w konsoli w przypadku nieprawidłowego imienia.
+
+function validateUsername(name) {
+    if(typeof name !== 'string') {
+        throw new Error("Imię musi być ciągiem znaków")
     }
-     finally {
-        console.log("finished processing user")
+
+    if(name.length < 4) {
+        throw new Error("Imię musi mieć conajmniej 4 znaki")
     }
-    console.log("finished processing user outside finally")
 
+    return true
 }
 
-const user = {
-    fullName: "John Doe"
+const userName = "Kamil"
+
+try {
+    validateUsername(userName)
 }
-
-// processUser(user)
-
-console.log('finished')
-
-function getAgeDiscount(age) {
-    if(!(age > 0)) {
-        throw new Error(`${age} is not valid age`)
-    } 
-    console.log("Discount is " + age)
+catch(error) {
+    console.error("Wystąpił błąd walidacji imienia użytkownika: ", error.message)
 }
-
-getAgeDiscount(-1)
