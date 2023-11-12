@@ -1,30 +1,33 @@
-// (de)serializacja obietków do postaci JSON
+// try-catch-finally
 
-const userPreferences = {
-    theme: "dark",
-    language: "en",
-    fontSize: 16,
-    showNotifications: true,
-    setTheme: function (theme) {
-        this.theme = theme
-    },
-    someUndefinedProp: undefined,
-    someNullProp: null,
-    gridSettings: {
-        pageSize: 10,
-        pageNumber: 1
+function processUser(user) {
+    try {
+        console.log(`Processing: ${user.fullName.toUpperCase()}`)
+    } catch (error) {
+        // console.error(error)
+        console.error("Error when processing user")
+        console.error("Please enter a valid fullName user property")
     }
+     finally {
+        console.log("finished processing user")
+    }
+    console.log("finished processing user outside finally")
+
 }
 
-const json = JSON.stringify(userPreferences)
+const user = {
+    fullName: "John Doe"
+}
 
-console.log(json)
-console.log(userPreferences)
+// processUser(user)
 
+console.log('finished')
 
-const parsedObject = JSON.parse(json)
-console.log(parsedObject)
-console.log(parsedObject.theme)
-console.log(parsedObject.language)
-console.log(parsedObject.gridSettings.pageNumber)
+function getAgeDiscount(age) {
+    if(!(age > 0)) {
+        throw new Error(`${age} is not valid age`)
+    } 
+    console.log("Discount is " + age)
+}
 
+getAgeDiscount(-1)
