@@ -1,11 +1,19 @@
-// Kalkulator BMI:
-// Poproś użytkownika o podanie swojej wagi i wzrostu za pomocą prompt, 
-// a następnie oblicz jego BMI i pokaż wynik za pomocą alert. 
-// Wzór BMI to masa ciała (kg) / (wzrost (m))^2.
+// interakcja przez zdarzenia
 
-const weight = prompt("Podaj swoją wagę (kg):")
-const height = prompt("Podaj swój wzrost (m)")
+function start() {
+    alert("Witaj")
+    const userName = prompt("Jak masz na imie?")
+    alert(`Cześć ${userName}, miło Cie widzieć`)
+    const correctResult = confirm(`Czy chcesz otrzymać darmowego iPhone?`)
+    if(correctResult) {
+        alert("Tak myślałem..")
+    } else {
+        alert("Ups")
+    }
+}
 
-const bmi = weight / (height * height)
-
-alert("Twój BMI, wynosi: " + bmi.toFixed(2))
+function onInputChange(event) {
+    console.log('Input changed')
+    const value = event.target.value
+    console.log(`Text field value: ${value}`)
+}
