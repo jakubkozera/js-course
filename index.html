@@ -11,19 +11,21 @@
 <body>
 
     <div class="container mt-5">
-        <h1>Sample app</h1>
-        <p>Sample app using HTML and bootstrap</p>
+        <h1 name="description">Sample app</h1>
+        <p name="description">Sample app using HTML and bootstrap</p>
 
         <div class="alert alert-primary" role="alert">
-            Hello JavaScript
+            Hello
+        </div>
+        <div class="alert alert-secondary" role="alert">
+            JavaScript
         </div>
 
         <label for="input1">Input 1:</label>
-        <input type="text" onchange="onInputChange(event)" class="form-control" id="input1">
+        <input type="text" class="form-control" id="input1">
 
         <label for="input2">Input 2:</label>
-        <input type="text" oninput="onInputChange(event)" onchange="onInputChange(event)" class="form-control"
-            id="input2">
+        <input type="text" class="form-control" id="input2">
 
         <button type="button" class="btn btn-success" onclick="start()">Click me</button>
     </div>
