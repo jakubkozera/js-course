@@ -1,5 +1,28 @@
-// interakcja przez zdarzenia
+// zadanie:
+// w ramach obsługi wydarzenia naciśnięcia guzika Click me
+// wykonaj funkcję, która obliczy sume wartości liczb całkowitych
+// z input 1 i input 2
+// jeżeli jakikolwiek input nie posiada prawidłowej wartości, 
+// powiadom użytkownika odpowiednim alertem
+// do sprawdzenia czy wartość jest liczbą całkowitą wykorzystaj parseInt
+// która w przypadku niepowodzenia zwróci NaN (not a number)
+// w celu sprawdzenia czy rezultat jest NaN, użyj metody isNaN: (value) => bool
 
+
+function sumInputs() {
+    const input1Value = document.getElementById("input1").value
+    const input2Value = document.getElementById("input2").value
+
+    const number1 = parseInt(input1Value)
+    const number2 = parseInt(input2Value)
+
+    if(isNaN(number1) || isNaN(number2)) {
+        alert("Wprowadź poprawne wartości liczbowe")
+    } else {
+        const sum = number1 + number2
+        alert("Suma wynosi: " + sum)
+    }
+}
 function start() {
     // pobieranie elementów przez nazwę klasy
     const alerts = document.getElementsByClassName("alert")
