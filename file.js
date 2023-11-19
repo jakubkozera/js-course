@@ -1,28 +1,19 @@
-// zadanie:
-// w ramach obsługi wydarzenia naciśnięcia guzika Click me
-// wykonaj funkcję, która obliczy sume wartości liczb całkowitych
-// z input 1 i input 2
-// jeżeli jakikolwiek input nie posiada prawidłowej wartości, 
-// powiadom użytkownika odpowiednim alertem
-// do sprawdzenia czy wartość jest liczbą całkowitą wykorzystaj parseInt
-// która w przypadku niepowodzenia zwróci NaN (not a number)
-// w celu sprawdzenia czy rezultat jest NaN, użyj metody isNaN: (value) => bool
+function manipulateDom() {
+    const alertDiv = document.querySelector(".alert.alert-primary")
+    alertDiv.innerHTML = "<strong>This is a new alert with a strong text.</strong>"
 
+    const newElement = document.createElement("p")
+    newElement.textContent = "This is a new paragraph"
 
-function sumInputs() {
-    const input1Value = document.getElementById("input1").value
-    const input2Value = document.getElementById("input2").value
+    alertDiv.appendChild(newElement)
 
-    const number1 = parseInt(input1Value)
-    const number2 = parseInt(input2Value)
+    const secondAlertDiv = document.querySelector(".alert.alert-secondary")
+    secondAlertDiv.innerText = "This is a new text content"
 
-    if(isNaN(number1) || isNaN(number2)) {
-        alert("Wprowadź poprawne wartości liczbowe")
-    } else {
-        const sum = number1 + number2
-        alert("Suma wynosi: " + sum)
-    }
+    const input2 = document.querySelector("#input2")
+    input2.parentElement.removeChild(input2)
 }
+
 function start() {
     // pobieranie elementów przez nazwę klasy
     const alerts = document.getElementsByClassName("alert")
