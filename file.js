@@ -1,3 +1,12 @@
+let clickCounter = 0
+
+function countClick() {
+    clickCounter++
+    const button = document.querySelector(".btn.btn-primary")
+    button.textContent = `Clicks: ${clickCounter}`
+}
+
+
 function manipulateDom() {
     const alertDiv = document.querySelector(".alert.alert-primary")
     alertDiv.innerHTML = "<strong>This is a new alert with a strong text.</strong>"
