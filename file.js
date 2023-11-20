@@ -1,11 +1,19 @@
-let clickCounter = 0
+function manipulateAttributes() {
+    const h1Element = document.querySelector("h1")
+    const h1NameAttribute = h1Element.getAttribute("name")
+    console.log(`Attrribute name: ${h1NameAttribute}`)
 
-function countClick() {
-    clickCounter++
-    const button = document.querySelector(".btn.btn-primary")
-    button.textContent = `Clicks: ${clickCounter}`
+    h1Element.setAttribute("style", "color: blue; font-size: 29px;")
+
+    const inputElement = document.querySelector("#input1")
+    const inputTypeAttribute = inputElement.getAttribute("type")
+    console.log(`Attribute type: ${inputTypeAttribute}`)
+
+    inputElement.setAttribute("type", "number")
+
+    const button = document.querySelector(".btn.btn-success")
+    button.removeAttribute("class")
 }
-
 
 function manipulateDom() {
     const alertDiv = document.querySelector(".alert.alert-primary")
