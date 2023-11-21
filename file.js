@@ -7,7 +7,12 @@ function toggleAlert() {
     //     alert.classList.add("alert")
     // }
 
-    alert.classList.toggle("alert")
+    // alert.classList.toggle("alert")
+
+    alert.style.fontSize = "30px"
+    console.log(alert.style.color)
+    console.log(window.getComputedStyle(alert).color)
+    
 }
 
 function manipulateAttributes() {
