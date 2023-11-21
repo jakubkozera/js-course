@@ -1,3 +1,15 @@
+function toggleAlert() {
+    const alert = document.getElementById("alert-hello")
+    console.log(alert.classList)
+    // if(alert.classList.contains("alert")) {
+    //     alert.classList.remove("alert")
+    // } else {
+    //     alert.classList.add("alert")
+    // }
+
+    alert.classList.toggle("alert")
+}
+
 function manipulateAttributes() {
     const h1Element = document.querySelector("h1")
     const h1NameAttribute = h1Element.getAttribute("name")
