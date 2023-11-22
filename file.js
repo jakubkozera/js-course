@@ -1,3 +1,15 @@
+document.getElementById("btn-alert")
+ .addEventListener("click", toggleAlert)
+
+const inputs = document.querySelectorAll("input")
+inputs.forEach(input => input.addEventListener("change", onInputChange))
+
+// document.getElementById("input2").addEventListener("change", onInputChange)
+
+document.getElementById("btn1").addEventListener("click", manipulateDom)
+
+document.getElementById("btn2").addEventListener("click", manipulateAttributes);
+
 function toggleAlert() {
     const alert = document.getElementById("alert-hello")
     console.log(alert.classList)
@@ -7,11 +19,11 @@ function toggleAlert() {
     //     alert.classList.add("alert")
     // }
 
-    // alert.classList.toggle("alert")
+    alert.classList.toggle("alert")
 
-    alert.style.fontSize = "30px"
-    console.log(alert.style.color)
-    console.log(window.getComputedStyle(alert).color)
+    // alert.style.fontSize = "30px"
+    // console.log(alert.style.color)
+    // console.log(window.getComputedStyle(alert).color)
     
 }
 
@@ -33,19 +45,21 @@ function manipulateAttributes() {
 }
 
 function manipulateDom() {
-    const alertDiv = document.querySelector(".alert.alert-primary")
-    alertDiv.innerHTML = "<strong>This is a new alert with a strong text.</strong>"
 
-    const newElement = document.createElement("p")
-    newElement.textContent = "This is a new paragraph"
+    document.getElementById("btn-alert").removeEventListener("click", toggleAlert)
+    // const alertDiv = document.querySelector(".alert.alert-primary")
+    // alertDiv.innerHTML = "<strong>This is a new alert with a strong text.</strong>"
 
-    alertDiv.appendChild(newElement)
+    // const newElement = document.createElement("p")
+    // newElement.textContent = "This is a new paragraph"
 
-    const secondAlertDiv = document.querySelector(".alert.alert-secondary")
-    secondAlertDiv.innerText = "This is a new text content"
+    // alertDiv.appendChild(newElement)
 
-    const input2 = document.querySelector("#input2")
-    input2.parentElement.removeChild(input2)
+    // const secondAlertDiv = document.querySelector(".alert.alert-secondary")
+    // secondAlertDiv.innerText = "This is a new text content"
+
+    // const input2 = document.querySelector("#input2")
+    // input2.parentElement.removeChild(input2)
 }
 
 function start() {
