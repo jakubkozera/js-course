@@ -4,40 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <title>Fiszki App</title>
+    <!-- Dodanie Bootstrapa -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .flashcard {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
-<body>
-    <div class="container mt-5">
-        <h1 name="description">Sample app</h1>
-        <p name="description">Sample app using HTML and bootstrap</p>
-
-        <div class="alert alert-primary" role="alert" id="alert-hello">
-            Hello
-        </div>
-        <button type="button" class="btn btn-success" id="btn-alert">Toggle alert</button>
-        <div class="alert alert-secondary" role="alert">
-            JavaScript
-        </div>
-
-        <label for="input1">Input 1:</label>
-        <input type="text" class="form-control" id="input1">
-
-        <label for="input2">Input 2:</label>
-        <input type="text" class="form-control" id="input2">
-
-
-        <button type="button" class="btn btn-success" id="btn1">Click me</button>
-        <button type="button" class="btn btn-primary" id="btn2">Manipulate attribute</button>
+<body class="bg-light">
+    <div class="container mt-4">
+        <div class="row" id="container"></div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="file.js"></script>
-
-
-
 </body>
 
 </html>
