@@ -21,3 +21,25 @@ const flashcardsData = [
     { polish: "Muzyka", english: "Music" }
 ];
 
+const container = document.getElementById("container")
+
+flashcardsData.forEach(flashCard => {
+    createFlashcard(flashCard.polish, flashCard.english)
+})
+
+function createFlashcard(polish, english) {
+    const flashcard = document.createElement("div")
+    flashcard.classList.add("flashcard")
+    flashcard.textContent = polish
+
+    flashcard.addEventListener("mouseenter", () => {
+        flashcard.textContent = english
+        flashcard.classList.toggle("bg-white")
+    })
+
+    flashcard.addEventListener("mouseout", () => {
+        flashcard.textContent = polish
+        flashcard.classList.toggle("bg-white")
+    })
+    container.appendChild(flashcard)
+}
