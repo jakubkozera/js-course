@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fiszki App</title>
-    <!-- Dodanie Bootstrapa -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        .flashcard {
-            border: 1px solid #ccc;
-            padding: 20px;
-            margin: 10px;
-            text-align: center;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 
-<body class="bg-light">
-    <div class="container mt-4">
-        <div class="row" id="container"></div>
+<body>
+
+    <div class="container mt-5">
+        <h2>Phone Book</h2>
+
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" class="form-control">
+        </div>
+        <button id="add-contact" class="btn btn-primary">Add Contact</button>
+
+        <h2>Search</h2>
+        <input type="text" id="search" class="form-control">
+
+        <h2>Contacts</h2>
+        <div id="contactsList" class="list-group mb-3"></div>
+
+
     </div>
+
     <script src="file.js"></script>
+
+
 </body>
 
 </html>
