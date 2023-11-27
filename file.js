@@ -1,12 +1,16 @@
+let counter = 0
 
- const regex = /^([a-z0-9]+)\.?([a-z0-9]+)@([a-z]+)\.[a-z]{2,3}$/
- const email = "test.tests2@gmail.com"
+console.log(counter)
 
- const isMatch = regex.test(email)
+document.getElementById("btn1").addEventListener("click", () => {
+   clearTimeout(timeoutId)
 
- console.log(isMatch)
+})
 
- let orginalString = "Hello, Hello, world"
+const timeoutId = setTimeout(function() {
 
- let modifiedString = orginalString.replace(/Hello/g, "Hi")
- console.log(modifiedString)
+   counter++
+   console.log(counter)
+
+
+}, 2000)
