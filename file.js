@@ -1,16 +1,28 @@
-let counter = 0
-
-console.log(counter)
-
-document.getElementById("btn1").addEventListener("click", () => {
-   clearTimeout(timeoutId)
-
-})
-
-const timeoutId = setTimeout(function() {
-
-   counter++
-   console.log(counter)
+// napisz prosty program który będzie odmierzał czas jak stoper.
+// po naciśnięciu guzika "Start/Stop" czas powinnien zacząć być odliczany, 
+// kiedy czas jest odliczany, po naciśnięciu "Start/Stop" powinnien być zatrzymany
+// dodatkowo zaimplementuj funkcje resetowania stopera, po naciśnięciu guzika "Reset"
 
 
-}, 2000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
