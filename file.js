@@ -1,16 +1,23 @@
-let counter = 0
+localStorage.setItem("language", "pl")
+localStorage.setItem("theme", "dark")
 
-console.log(counter)
+const themeColor = localStorage.getItem("theme")
+console.log(themeColor)
 
-document.getElementById("btn1").addEventListener("click", () => {
-   clearTimeout(timeoutId)
-
-})
-
-const timeoutId = setTimeout(function() {
-
-   counter++
-   console.log(counter)
+localStorage.removeItem("theme")
 
 
-}, 2000)
+const themeColor2 = localStorage.getItem("theme")
+console.log(themeColor2)
+
+localStorage.clear()
+
+const userSettings = {
+   theme: "dark",
+   lang: "en"
+}
+
+localStorage.setItem("settings", JSON.stringify(userSettings))
+
+const storedSettings = JSON.parse(localStorage.getItem("settings"))
+console.log(storedSettings)
