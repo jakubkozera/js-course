@@ -9,32 +9,37 @@
 </head>
 
 <body>
-    <div class="container mt-5">
-        <h1 name="description">Sample app</h1>
-        <p name="description">Sample app using HTML and bootstrap</p>
+    <div class="container mt-2">
+        <h1>Users management</h1>
 
-        <div class="alert alert-primary" role="alert" id="alert-hello">
-            Hello
-        </div>
-        <div class="alert alert-secondary" role="alert">
-            JavaScript
-        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Street</td>
+                    <td>City</td>
+                    <td>Zip Code</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Adam Hudson</td>
+                    <td>Adam.Hudson24@gmail.com</td>
+                    <td>235 DuBuque Islands</td>
+                    <td>Moseview</td>
+                    <td>05280-8078</td>
+                </tr>
+            </tbody>
+        </table>
 
-        <form action="user/register" method="post">
-            <label for="username">Username:</label>
-            <input type="text" class="form-control" name="username" id="username">
-            <label for="password">Password:</label>
-            <input type="text" class="form-control" name="password" id="password">
-
-
-            <button type="submit" class="btn btn-success" id="btn1">Submit</button>
-        </form>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="file.js"></script>
-
 
 
 </body>

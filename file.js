@@ -1,23 +1,25 @@
 window.onload = () => {
-    document.querySelector("form").addEventListener("submit", function(event) {
-        event.preventDefault()
+    const tableBody = document.querySelector("table tbody")
+    const apiBaseUrl = "https://users-api-jk.azurewebsites.net"
+    fetch(`${apiBaseUrl}/api/Users`)
+        .then(respone => {
+            console.log(respone)
 
-        const form = document.querySelector("form")
+            return respone.json()
+        }).then(data => {
+            console.log('data', data)
+            const userRows = data.map(user => {
+                return `<tr>
+                <td>${user.id}</td>
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.address.street}</td>
+                <td>${user.address.city}</td>
+                <td>${user.address.zipCode}</td>
+                </tr>`
+            })
 
-        const formData = new FormData(form)
-        const userData = Object.fromEntries(formData)
+            tableBody.innerHTML = userRows.join("")
 
-        console.log(userData)
-        console.log(form.action)
-        console.log(form.method)
-        // const usernameValue = document.getElementById("username").value
-        // const passwordValue = document.getElementById("password").value
-
-        // const userData = {
-        //     username: usernameValue,
-        //     password: passwordValue
-        // }
-
-        // console.log(userData)
-    })
+        })
 }
