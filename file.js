@@ -18,4 +18,41 @@ window.onload = async () => {
 
     tableBody.innerHTML = userRows.join("")
 
+
+    document.getElementById("addUserForm").addEventListener("submit", async function (event) {
+        event.preventDefault()
+
+        const form = document.getElementById("addUserForm")
+        const formData = new FormData(form)
+       
+        const serializedData = {};
+        for (let [key, value] of formData.entries()) {
+            // debugger
+            const keys = key.split('.');
+            const lastKey = keys.pop();
+            let obj = serializedData;
+            for (let k of keys) {
+                obj[k] = obj[k] || {};
+                obj = obj[k];
+            }
+            obj[lastKey] = value;
+        }
+        const json = JSON.stringify(serializedData);
+        console.log(json)
+
+        const createUserResponse = await fetch(`${apiBaseUrl}/api/Users`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: json
+        })
+
+        if(createUserResponse.ok) {
+            alert("User created")
+        } else {
+            alert("Something went wrong")
+        }
+
+    })
 }
