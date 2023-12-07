@@ -1,28 +1,39 @@
 window.onload = async () => {
-    const tableBody = document.querySelector("table tbody")
     const apiBaseUrl = "https://users-api-jk.azurewebsites.net"
-    const respone = await fetch(`${apiBaseUrl}/api/Users`)
-    console.log(respone)
-    const data = await respone.json()
-    console.log('data', data)
-    const userRows = data.map(user => {
-        return `<tr>
-        <td>${user.id}</td>
-        <td>${user.name}</td>
-        <td>${user.email}</td>
-        <td>${user.address.street}</td>
-        <td>${user.address.city}</td>
-        <td>${user.address.zipCode}</td>
-        </tr>`
-    })
 
-    tableBody.innerHTML = userRows.join("")
+    await renderUser()
+    async function renderUser() {
+        const tableBody = document.querySelector("table tbody")
+        const respone = await fetch(`${apiBaseUrl}/api/Users`)
+        console.log(respone)
+        const data = await respone.json()
+        console.log('data', data)
+        const userRows = data.map(user => {
+            return `<tr>
+            <td>${user.id}</td>
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td>${user.address.street}</td>
+            <td>${user.address.city}</td>
+            <td>${user.address.zipCode}</td>
+            </tr>`
+        })
+    
+        tableBody.innerHTML = userRows.join("")
+    }
+
 
 
     document.getElementById("addUserForm").addEventListener("submit", async function (event) {
         event.preventDefault()
 
         const form = document.getElementById("addUserForm")
+
+        if(!form.checkValidity()) {
+            form.classList.add("was-validated")
+            return
+        }
+
         const formData = new FormData(form)
        
         const serializedData = {};
@@ -50,7 +61,16 @@ window.onload = async () => {
 
         if(createUserResponse.ok) {
             alert("User created")
-        } else {
+            const closeModalBtn = document.getElementById("closeModalBtn")
+            closeModalBtn.click()
+            await renderUser()
+
+        } else if (createUserResponse.status === 400) {
+            const responseBody = await createUserResponse.json()
+            const errorMessages = Object.values(responseBody.errors).flatMap(x => x).join("\n")
+            alert("Fix your validation erros: \n" + errorMessages)
+        }
+        else {
             alert("Something went wrong")
         }
 
