@@ -60,7 +60,7 @@
             </div>
         </div>
 
-
+        <input type="text" id="filterInput" class="mt-2 form-control" placeholder="Filter users">
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -83,6 +83,25 @@
                 </tr>
             </tbody>
         </table>
+
+        <div style="display: flex; justify-content: space-evenly">
+            <div>
+                Page size:
+                <select class="custom-select custom-select-lg mb-3" id="pageSizeSelect">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                </select>
+
+            </div>
+
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+            </ul>
+        </div>
+
 
     </div>
 
